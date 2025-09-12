@@ -21,12 +21,14 @@ requirements:
     - setuptools
   run:
     - python >={{ python_min }}
-    - openff-toolkit-base >=0.16
+    - openff-toolkit >=0.16
     - openff-interchange-base ~=0.4.6 # could probably work with 0.5 but wait until released
     - numpy
     - openmm
 
 test:
+  source_files:
+    - smirnoff_plugins/_tests
   requires:
     - python {{ python_min }}
     - pytest
