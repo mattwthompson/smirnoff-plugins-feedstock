@@ -22,15 +22,18 @@ requirements:
   run:
     - python >={{ python_min }}
     - openff-toolkit-base >=0.16
-    - openff-interchange-base =0.4
+    - openff-interchange-base ~=0.4.6 # could probably work with 0.5 but wait until released
     - numpy
     - openmm
 
 test:
   requires:
     - python {{ python_min }}
+    - pytest
   imports:
     - smirnoff_plugins
+  commands:
+    - pytest -v --maxfail=1 --disable-warnings
 
 about:
   home: https://github.com/openforcefield/smirnoff-plugins
@@ -49,3 +52,4 @@ extra:
     - simonboothroyd
     - jthorton
     - mattwthompson
+    - fjclark
