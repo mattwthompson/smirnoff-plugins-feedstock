@@ -1,5 +1,5 @@
 {% set name = "smirnoff-plugins" %}
-{% set version = "2025.06.0" %}
+{% set version = "2025.09.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/openforcefield/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 1d36a6244eb3b4c0a8b1f23f7a143d50492d85671f91dec32d2644cb620f104a
+  sha256: e5349c586f7695a566aaad522dab70e4b9962b612909e7f381aa7b30bc2c3c2d
 
 build:
   number: 0
@@ -22,7 +22,7 @@ requirements:
   run:
     - python >={{ python_min }}
     - openff-toolkit-base >=0.16
-    - openff-interchange-base =0.4
+    - openff-interchange-base ~=0.4.7  # could probably work with 0.5 but wait until released
     - numpy
     - openmm
 
@@ -49,3 +49,4 @@ extra:
     - simonboothroyd
     - jthorton
     - mattwthompson
+    - fjclark
